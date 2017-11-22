@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro Serviço</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        
+      <ion-item>
+        <ion-label fixed>Contratante</ion-label>
+        <ion-input type="text" [(ngModel)]="contratante"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Data</ion-label>
+        <ion-input type="date" [(ngModel)]="data"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Descrição</ion-label>
+        <ion-input type="textarea" [(ngModel)]="descricao"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    
+    <button ion-button (click)="submit()" style="position:absolute;right:0px;">Próximo</button>
+
+</ion-content>

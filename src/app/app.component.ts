@@ -1,3 +1,13 @@
+import { CadastroServicoPage } from './../pages/cadastroservico/cadastroservico';
+import { ServReferencia } from './../pages/servreferencia/servreferencia';
+import { PerfilPage } from './../pages/perfil/perfil';
+import { PortifolioPage } from './../pages/portifolio/portifolio';
+import { ReferenciaPage } from './../pages/referencia/referencia';
+import { ServicosPage } from './../pages/servicos/servicos';
+
+import { CadastroPage } from './../pages/cadastro/cadastro';
+import { LoginPage } from './../pages/login/login';
+import { FreelancerPage } from './../pages/freelancer/freelancer';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -5,6 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AreaPage } from '../pages/area/area';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,9 +34,17 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Freelancer', component: FreelancerPage},
+      { title: 'Login', component: LoginPage},     
+      { title: 'Cadastro', component: CadastroPage},     
+      { title: 'Serviços', component: ServicosPage},
+      { title: 'Área', component: AreaPage},   
+      { title: 'Referência', component: ReferenciaPage},
+      { title: 'Portifólio', component: PortifolioPage},
+      { title: 'Perfil', component: PerfilPage},
+      { title: 'ServRef', component: ServReferencia},
+      { title: 'CadastroServico', component: CadastroServicoPage},
     ];
-
   }
 
   initializeApp() {

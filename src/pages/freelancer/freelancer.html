@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Freelancer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content ng-app="app">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+   <!-- Card Freelancer -->
+   <ion-card *ngFor="let pessoa of pessoas" (click)="itemTapped($event, pessoa)">
+      <img src=""/>
+      <ion-card-content>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/avatar.jpg">
+          </ion-avatar>
+          <h2>{{pessoa.nome}}</h2>
+          <p>Área: Analista de Sistemas</p>
+        </ion-item>
+        <ion-card-title>
+          Contato:
+        </ion-card-title>
+        Telefone: {{pessoa.telefone}}
+        <br/>
+        E-mail: {{pessoa.email}}
+        <br/>
+        Idade: {{pessoa.nascimento}}
+      </ion-card-content>
+    </ion-card>
+    <!-- Card Freelancer -->
+  
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list> 
+    <ion-item>
+      <ion-label fixed>Login</ion-label>
+      <ion-input type="text" [(ngModel)]="login" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <button ion-button secondary style="position:absolute;right:0px;" (click)="submit()" >Entrar</button>
+  <br/><br/>  <br/><br/> <br/><br/>
+
+  <p style="text-align: center;">Ainda não sou cadastrado...</p>
+  <button ion-button secondary full [navPush]="cadastroPage">Registrar</button>
+
+</ion-content>

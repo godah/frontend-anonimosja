@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Serviços</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <button ion-button secondary full (click)="addServicoFeito()">Adicionar Serviço Feito</button>
+
+  <ion-card *ngFor="let item of servicos" >
+    <ion-card-content>
+      <ion-card-title>
+        {{item.data}} - {{item.contratante}}
+        <ion-icon name="eye" (click)="itemTapped($event, item)"> </ion-icon>  Ver
+        </ion-card-title>
+      <p>
+        {{item.descricao}}
+      </p>
+      <ion-icon name="trash" (click)="itemRemove($event, item)"> </ion-icon>  Remover
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+

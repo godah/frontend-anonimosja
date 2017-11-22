@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Portifólio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Card Freelancer -->
+  <ion-card>
+    <img src=""/>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/avatar.jpg">
+        </ion-avatar>
+        <h2>{{selectedItem.nome}}</h2>
+        <p>Área: Analista de Sistemas</p>
+      </ion-item>
+      <ion-card-title>
+        Contato:
+      </ion-card-title>
+      Telefone: {{selectedItem.telefone}}
+      <br/>
+      E-mail: {{selectedItem.email}}
+      <br/>
+      Idade: {{selectedItem.nascimento}}
+    </ion-card-content>
+  </ion-card>
+  <!-- Card Freelancer -->
+
+  <!-- Card ServicoFeito -->
+  <ion-card *ngFor="let servico of servicos">
+    <ion-card-content (click)="itemTapped($event, servico)">
+      <ion-item>
+        <h2>Serviço Feito</h2>
+        <p>Contratante: {{servico.contratante}} em {{servico.data}}</p>
+        <ion-icon name="eye"> </ion-icon>  Ver Contato.
+      </ion-item>
+      <ion-card-title>
+        Descrição:
+      </ion-card-title>
+      <p>{{servico.descricao}}</p>
+    </ion-card-content>
+  </ion-card>
+  <!-- Card ServicoFeito -->
+
+</ion-content>
