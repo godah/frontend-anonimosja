@@ -13,7 +13,7 @@ import { ToastController } from 'ionic-angular';
 })
 export class AreaPage {
   private freelancer: any;
-  private areas: Array<string> = [];
+  private areas: Array<string> = []; 
   //private selectArea: any;
   private area: Object = {};
   constructor(public http: Http, public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams){
