@@ -1,3 +1,4 @@
+import { Freela } from './../login/login';
 import { FreelancerArea } from './../freelancer/freelancer';
 import { Area } from './../area/area';
 import { ServReferencia } from './../servreferencia/servreferencia';
@@ -12,10 +13,11 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'portifolio.html'
 })
 export class PortifolioPage {
-  selectedItem: any;
+  selectedItem: Freela;
   public servicos: Array<Servico> = [];
   public area: Area;
   public freelancerArea: FreelancerArea;
+  idade: any;
 
   constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
@@ -23,7 +25,18 @@ export class PortifolioPage {
     this.selectedItem = this.freelancerArea.freelancer;
     this.area = this.freelancerArea.area;
     this.getServicos();
+    this.getIdade();
   }
+
+  getIdade(){
+
+    var now = Date.now();
+    var nasc = new Date(this.selectedItem.nascimento).valueOf();
+    var idade = (Math.round((now - nasc)/31536000000));
+    this.idade =(idade);
+    
+  }
+
   getServicos(){
     var url: string = "http://34.238.67.140/anonimosja/servicofeito/list/pessoa/"+this.selectedItem.id;
     this.http.get(url).map(res => res.json())

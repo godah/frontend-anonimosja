@@ -30,22 +30,7 @@ export class FreelancerPage {
       af: af
     });
   }
-/*
-  public agregarAreaFreelancer(){
-    alert(this.pessoas.length);
-    for (var _i = 0; _i < this.pessoas.length; _i++) {
-      
-      var url: string = "http://34.238.67.140/anonimosja/freelancerarea/areaporfreelancer/"+this.pessoas[_i].id;
-      this.http.get(url).map(res => res.json())
-      .subscribe(data => {
-        this.area = data;
-        alert(this.area.descricao);
-        this.pessoas[_i].area = this.area.descricao;
-      }); 
 
-    }
-  }
-*/
   getFreelancers(){
     var url: string = "http://34.238.67.140/anonimosja/freelancer/list";
     this.http.get(url).map(res => res.json())

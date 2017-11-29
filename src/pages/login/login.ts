@@ -60,7 +60,6 @@ export class Freela {
   private _valorhora: string;
   private _nome: string;
   private _nascimento: string;
-  private _idade: string;
 
   public get id(): string {
       return this._id;
@@ -103,7 +102,7 @@ export class Freela {
   }
 
   public get idade(): string {
-    return this._nascimento;
+    return "teste";//this._nascimento;
   }
 
   public set idade(idade: string) {
@@ -111,7 +110,7 @@ export class Freela {
   }
 
   public get nascimento(): string {
-    return this._nascimento;
+    return "nascimento";//+this._nascimento;
   }
 
   public set nascimento(nascimento: string) {
