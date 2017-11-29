@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Area } from '../area/area';
 
 
 @Component({
@@ -17,17 +18,34 @@ export class FreelancerPage {
   portifolioPage = PortifolioPage;  
   public pessoas: Array<Freela> = [];
   public pessoasOrigin: Array<Freela> = [];
+  public areaFreelancers: Array<FreelancerArea> = [];
 
   constructor(public navCtrl: NavController, public http: Http) {
     this.getFreelancers();
+    this.getFreelancerArea();
   } 
 
-  itemTapped(event, pessoa) {
+  itemTapped(event, af) {
     this.navCtrl.push(PortifolioPage, {
-      pessoa: pessoa
+      af: af
     });
   }
+/*
+  public agregarAreaFreelancer(){
+    alert(this.pessoas.length);
+    for (var _i = 0; _i < this.pessoas.length; _i++) {
+      
+      var url: string = "http://34.238.67.140/anonimosja/freelancerarea/areaporfreelancer/"+this.pessoas[_i].id;
+      this.http.get(url).map(res => res.json())
+      .subscribe(data => {
+        this.area = data;
+        alert(this.area.descricao);
+        this.pessoas[_i].area = this.area.descricao;
+      }); 
 
+    }
+  }
+*/
   getFreelancers(){
     var url: string = "http://34.238.67.140/anonimosja/freelancer/list";
     this.http.get(url).map(res => res.json())
@@ -35,6 +53,14 @@ export class FreelancerPage {
       this.pessoas = data;
       this.pessoasOrigin = data;
       //alert(this.pessoas);
+    }); 
+  }
+
+  getFreelancerArea(){
+    var url: string = "http://34.238.67.140/anonimosja/freelancerarea/list";
+    this.http.get(url).map(res => res.json())
+    .subscribe(data => {
+      this.areaFreelancers = data;
     }); 
   }
 
@@ -61,3 +87,33 @@ export class FreelancerPage {
 
 }
 
+export class FreelancerArea{
+  private _id: string;
+  private _freelancer: Freela;
+  private _area: Area;
+
+  public get id(): string {
+    return this._id;
+  }
+
+  public set id(id: string) {
+      this._id = id;
+  }
+
+  public get freelancer(): Freela {
+    return this._freelancer;
+  }
+
+  public set freelancer(freelancer: Freela) {
+      this._freelancer = freelancer;
+  }
+
+  public get area(): Area {
+    return this._area;
+  }
+
+  public set area(area: Area) {
+      this._area = area;
+  }
+
+}

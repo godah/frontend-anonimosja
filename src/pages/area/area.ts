@@ -62,3 +62,24 @@ export class AreaPage {
 
   }
 }
+
+export class Area{
+  private _id: string;
+  private _descricao: string;
+
+  public get id(): string {
+    return this._id;
+}
+
+public set id(id: string) { 
+    this._id = id;
+}
+
+public get descricao(): string {
+  return this._descricao;
+}
+
+public set descricao(descricao: string) {
+    this._descricao = descricao;
+}
+}

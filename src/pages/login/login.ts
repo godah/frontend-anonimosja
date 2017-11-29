@@ -52,12 +52,15 @@ export class LoginPage {
 
 export class Freela {
   private _id: string;
-  //private _login: string;
-  //private _senha: string;
-  //private _telefone: string;
-  //private _email: string;
-  //private _valorhora: string;
+  private _area: string;
+  private _login: string;
+  private _senha: string;
+  private _telefone: string;
+  private _email: string;
+  private _valorhora: string;
   private _nome: string;
+  private _nascimento: string;
+  private _idade: string;
 
   public get id(): string {
       return this._id;
@@ -73,6 +76,46 @@ export class Freela {
 
   public set nome(nome: string) {
       this._nome = nome;
+  }
+
+  public get area(): string {
+    return this._area;
+  }
+
+  public set area(area: string) {
+      this._area = area;
+  }
+
+  public get telefone(): string {
+    return this._telefone;
+  }
+
+  public set telefone(telefone: string) {
+      this._telefone = telefone;
+  }
+
+  public get email(): string {
+    return this._email;
+  }
+
+  public set email(email: string) {
+      this._email = email;
+  }
+
+  public get idade(): string {
+    return this._nascimento;
+  }
+
+  public set idade(idade: string) {
+      this._nascimento = idade;
+  }
+
+  public get nascimento(): string {
+    return this._nascimento;
+  }
+
+  public set nascimento(nascimento: string) {
+      this._nascimento = nascimento;
   }
 }
 

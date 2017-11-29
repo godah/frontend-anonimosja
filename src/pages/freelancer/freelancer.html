@@ -10,24 +10,24 @@
 <ion-content ng-app="app">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
    <!-- Card Freelancer -->
-   <ion-card *ngFor="let pessoa of pessoas" (click)="itemTapped($event, pessoa)">
+   <ion-card *ngFor="let af of areaFreelancers" (click)="itemTapped($event, af)">
       <img src=""/>
       <ion-card-content>
         <ion-item>
           <ion-avatar item-start>
             <img src="../../assets/imgs/avatar.jpg">
           </ion-avatar>
-          <h2>{{pessoa.nome}}</h2>
-          <p>Área: Analista de Sistemas</p>
+          <h2>{{af.freelancer.nome}}</h2>
+          <p>Área: {{af.area.descricao}}</p>
         </ion-item>
         <ion-card-title>
           Contato:
         </ion-card-title>
-        Telefone: {{pessoa.telefone}}
+        Telefone: {{af.freelancer.telefone}}
         <br/>
-        E-mail: {{pessoa.email}}
+        E-mail: {{af.freelancer.email}}
         <br/>
-        Idade: {{pessoa.nascimento}}
+        Idade: {{af.freelancer.idade}}
       </ion-card-content>
     </ion-card>
     <!-- Card Freelancer -->
