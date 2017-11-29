@@ -45,7 +45,7 @@ $ ionic start myApp sidemenu
 
 *****
 config.xml
-add <preference name="loadUrlTimeoutValue" value="700000" />
+add &lsaquo;preference name="loadUrlTimeoutValue" value="700000" /&rsaquo;	
 *****
 error de compilação crosswalk
 So you need use the command of cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git.
