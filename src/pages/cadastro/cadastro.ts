@@ -1,3 +1,4 @@
+import { Freela } from './../login/login';
 import { AreaPage } from './../area/area';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Component } from '@angular/core';
@@ -14,19 +15,22 @@ import { ToastController } from 'ionic-angular';
 })
 
 export class CadastroPage {
-  private foto: any;
+  private foto: string;
+  private base64textString:string;
   private login: any;
   private senha: any;
   private new: boolean = true;
   selectedItem: any;
   private freelancer: Object={};
+  private jsonPost: Freela;
   constructor(public http: Http, public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams){
     //recebe parametros enviados de outra pagina
     this.selectedItem = navParams.get('pessoa');
 
     //testa se null abre novo, se !null abre editar
-    if(this.selectedItem != null){
+    if(this.selectedItem != null){  
       this.freelancer = this.selectedItem;
+      this.foto = this.selectedItem.foto;
       this.new = false;
     }
   } 
@@ -47,12 +51,37 @@ export class CadastroPage {
 
 
 
+  handleFileSelect(evt){
+    var files = evt.target.files;
+    var file = files[0];
+
+  if (files && file) {
+      var reader = new FileReader();
+
+      reader.onload =this.handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
+  }
+}
+
+
+
+handleReaderLoaded(readerEvt) {
+   var binaryString = readerEvt.target.result;
+          this.base64textString= btoa(binaryString);
+          //console.log(btoa(binaryString));
+  }
+
 
 
   
   //post
   submit() {
-    
+    this.selectedItem = this.freelancer;
+    this.jsonPost = this.selectedItem;
+    this.jsonPost.foto = this.foto;
+    console.log(this.jsonPost);
+
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
@@ -61,7 +90,8 @@ export class CadastroPage {
     if(this.new){
       //POST freelancer
       var url = 'http://localhost:8080/anonimosja/freelancer/post';
-      this.http.post(url, this.freelancer, options)
+      //this.http.post(url, this.freelancer, options)
+      this.http.post(url, this.jsonPost, options)
       .subscribe(data => {
 
         //confirma cadastro a fim de pegar o id para proxima seção de cadastro
@@ -83,7 +113,7 @@ export class CadastroPage {
     }else{
       //PUT freelancer
       var url = 'http://localhost:8080/anonimosja/freelancer/put';
-      this.http.put(url, this.freelancer, options)
+      this.http.put(url, this.jsonPost, options)
       .subscribe(data => {
         
       }); 

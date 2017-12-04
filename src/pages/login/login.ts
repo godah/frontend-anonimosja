@@ -59,6 +59,7 @@ export class Freela {
   private _email: string;
   private _valorhora: string;
   private _nome: string;
+  private _foto: string;
   private _nascimento: string;
 
   public get id(): string {
@@ -116,5 +117,38 @@ export class Freela {
   public set nascimento(nascimento: string) {
       this._nascimento = nascimento;
   }
+
+  public get login(): string {
+    return this._login;
+  }
+
+  public set login(login: string) {
+      this._login = login;
+  }
+
+  public get senha(): string {
+    return this._senha;
+  }
+
+  public set senha(senha: string) {
+      this._senha = senha;
+  }
+
+  public get valorhora(): string {
+    return this._valorhora;
+  }
+
+  public set valorhora(valorhora: string) {
+      this._valorhora = valorhora;
+  }
+
+  public get foto(): string {
+    return this._foto;
+  }
+
+  public set foto(foto: string) {
+      this._foto = foto;
+  }
 }
+
 
