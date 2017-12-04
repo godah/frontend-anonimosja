@@ -20,6 +20,7 @@ export class AreaPage {
     //recebe parametros enviados de outra pagina
     this.freelancer = navParams.get('freelancer');
     this.getArea();
+    //alert(this.freelancer.nome);
   } 
 
   
@@ -30,7 +31,7 @@ export class AreaPage {
     headers.append('Content-Type', 'application/json' );
     let options = new RequestOptions({ headers: headers });
    
-    var url = 'http://34.238.67.140/anonimosja/freelancerarea/post';
+    var url = 'http://localhost:8080/anonimosja/freelancerarea/post';
     this.http.post(url, this.area, options)
     .subscribe(data => {
      
@@ -46,7 +47,7 @@ export class AreaPage {
   }
 
   getArea(){
-    var urlArea = 'http://34.238.67.140/anonimosja/area/list';
+    var urlArea = 'http://localhost:8080/anonimosja/area/list';
     this.http.get(urlArea).map(res => res.json())
     .subscribe(data => {
       this.areas = data;

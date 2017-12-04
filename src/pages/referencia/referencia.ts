@@ -30,7 +30,7 @@ export class ReferenciaPage {
 
     
     //POST freelancer
-    var url = 'http://34.238.67.140/anonimosja/referencia/post';
+    var url = 'http://localhost:8080/anonimosja/referencia/post';
     this.http.post(url, this.referencia, options)
     .subscribe(data => {
       //alert(data.status);  

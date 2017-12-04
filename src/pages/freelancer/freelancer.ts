@@ -32,7 +32,7 @@ export class FreelancerPage {
   }
 
   getFreelancers(){
-    var url: string = "http://34.238.67.140/anonimosja/freelancer/list";
+    var url: string = "http://localhost:8080/anonimosja/freelancer/list";
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.pessoas = data;
@@ -42,7 +42,7 @@ export class FreelancerPage {
   }
 
   getFreelancerArea(){
-    var url: string = "http://34.238.67.140/anonimosja/freelancerarea/list";
+    var url: string = "http://localhost:8080/anonimosja/freelancerarea/list";
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.areaFreelancers = data;
