@@ -14,6 +14,7 @@ import { ToastController } from 'ionic-angular';
 })
 
 export class CadastroPage {
+  private foto: any;
   private login: any;
   private senha: any;
   private new: boolean = true;
@@ -29,9 +30,29 @@ export class CadastroPage {
       this.new = false;
     }
   } 
+
+  atualizaArquivo($event) : void {
+    this.readThis($event.target);
+  }
+  
+  readThis(inputValue: any): void {
+    var file:File = inputValue.files[0];
+    var myReader:FileReader = new FileReader();
+  
+    myReader.onloadend = (e) => {
+      this.foto = myReader.result;
+    }
+    myReader.readAsDataURL(file);
+  }
+
+
+
+
+
   
   //post
   submit() {
+    
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );

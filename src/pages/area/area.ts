@@ -26,13 +26,14 @@ export class AreaPage {
   
   //POST idArea
   postArea(){
+    
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
     let options = new RequestOptions({ headers: headers });
    
     var url = 'http://localhost:8080/anonimosja/freelancerarea/post';
-    this.http.post(url, this.area, options)
+    this.http.post(url, this.area , options)
     .subscribe(data => {
      
     }, error => {
