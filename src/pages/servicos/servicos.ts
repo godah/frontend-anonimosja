@@ -22,7 +22,7 @@ export class ServicosPage {
   } 
 
   getServicos(){
-    var url: string = "http://localhost:8080/anonimosja/servicofeito/list/pessoa/"+this.freelancer.id;
+    var url: string = "http://34.238.67.140/anonimosja/servicofeito/list/pessoa/"+this.freelancer.id;
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.servicos = data;
@@ -43,16 +43,16 @@ export class ServicosPage {
   */
   itemRemove(event, servico) {
     //busca a referencia
-    var url: string = "http://localhost:8080/anonimosja/referencia/list/servicoFeito/"+servico.id;
+    var url: string = "http://34.238.67.140/anonimosja/referencia/list/servicoFeito/"+servico.id;
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.referencia = data;
 
       //encontrando deleta a referencia
-      var url: string = "http://localhost:8080/anonimosja/referencia/delete/"+this.referencia.id;    
+      var url: string = "http://34.238.67.140/anonimosja/referencia/delete/"+this.referencia.id;    
       this.http.delete(url).subscribe(data =>{
         //deletenado referencia deleta o servicoFeito
-        var url: string = "http://localhost:8080/anonimosja/servicofeito/delete/"+servico.id;    
+        var url: string = "http://34.238.67.140/anonimosja/servicofeito/delete/"+servico.id;    
         this.http.delete(url).subscribe(data =>{
           //deletando servicoFeito atualiza lista
             this.getServicos();

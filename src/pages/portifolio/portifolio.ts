@@ -38,7 +38,7 @@ export class PortifolioPage {
   }
 
   getServicos(){
-    var url: string = "http://localhost:8080/anonimosja/servicofeito/list/pessoa/"+this.selectedItem.id;
+    var url: string = "http://34.238.67.140/anonimosja/servicofeito/list/pessoa/"+this.selectedItem.id;
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.servicos = data;

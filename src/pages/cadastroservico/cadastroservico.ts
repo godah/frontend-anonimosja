@@ -39,7 +39,7 @@ export class CadastroServicoPage {
 
     this.servico = "{descricao:\""+this.descricao+"\",data:\""+this.data+"\",contratante:\""+this.contratante+"\",freelancer:{id:\""+this.freelancer.id+"\"}}";
     //POST freelancer
-    var url = 'http://localhost:8080/anonimosja/servicofeito/post';
+    var url = 'http://34.238.67.140/anonimosja/servicofeito/post';
     this.http.post(url, this.servico, options)
     .subscribe(data => {
       this.confirmaCadastro();   
@@ -56,7 +56,7 @@ export class CadastroServicoPage {
     headers.append('Content-Type', 'application/json' );
     //let options = new RequestOptions({ headers: headers });
     
-    var url = 'http://localhost:8080/anonimosja/servicofeito/list/pessoa/last/'+this.freelancer.id;
+    var url = 'http://34.238.67.140/anonimosja/servicofeito/list/pessoa/last/'+this.freelancer.id;
     this.http.get(url).map(res => res.json())
       .subscribe(data => {
       this.servico = data;  

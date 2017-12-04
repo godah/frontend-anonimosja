@@ -36,14 +36,6 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Freelancer', component: FreelancerPage},
       { title: 'Login', component: LoginPage},     
-      { title: 'Cadastro', component: CadastroPage},     
-      { title: 'Serviços', component: ServicosPage},
-      { title: 'Área', component: AreaPage},   
-      { title: 'Referência', component: ReferenciaPage},
-      { title: 'Portifólio', component: PortifolioPage},
-      { title: 'Perfil', component: PerfilPage},
-      { title: 'ServRef', component: ServReferencia},
-      { title: 'CadastroServico', component: CadastroServicoPage},
     ];
   }
 

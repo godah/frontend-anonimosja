@@ -89,7 +89,7 @@ handleReaderLoaded(readerEvt) {
     
     if(this.new){
       //POST freelancer
-      var url = 'http://localhost:8080/anonimosja/freelancer/post';
+      var url = 'http://34.238.67.140/anonimosja/freelancer/post';
       //this.http.post(url, this.freelancer, options)
       this.http.post(url, this.jsonPost, options)
       .subscribe(data => {
@@ -112,7 +112,7 @@ handleReaderLoaded(readerEvt) {
       }); 
     }else{
       //PUT freelancer
-      var url = 'http://localhost:8080/anonimosja/freelancer/put';
+      var url = 'http://34.238.67.140/anonimosja/freelancer/put';
       this.http.put(url, this.jsonPost, options)
       .subscribe(data => {
         
@@ -130,7 +130,7 @@ handleReaderLoaded(readerEvt) {
     headers.append('Content-Type', 'application/json' );
     let options = new RequestOptions({ headers: headers });
     console.log(this.login +" "+this.senha);
-    var url = 'http://localhost:8080/anonimosja/login/list/'+this.login+":"+this.senha;
+    var url = 'http://34.238.67.140/anonimosja/login/list/'+this.login+":"+this.senha;
     this.http.get(url).map(res => res.json())
       .subscribe(data => {
       this.freelancer = data;    

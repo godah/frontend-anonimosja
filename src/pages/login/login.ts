@@ -24,7 +24,7 @@ export class LoginPage {
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
 
-    var url = 'http://localhost:8080/anonimosja/login/list/'+this.login+":"+this.senha;
+    var url = 'http://34.238.67.140/anonimosja/login/list/'+this.login+":"+this.senha;
     this.http.get(url).map(res => res.json())
       .subscribe(data => {
       this.freelancer = data;
