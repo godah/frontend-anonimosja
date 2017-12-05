@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://crosswalk-project.org/documentation/cordova.html -->
+<html id="top" class="wf-clearsans-n4-active wf-sourcecodepro-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Crosswalk - Crosswalk with Cordova 4.0</title>
+    <link rel="shorcut icon" href="https://crosswalk-project.org/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://crosswalk-project.org/assets/favicon.ico" type="image/x-icon">
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/0724.js.download" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./Crosswalk - Crosswalk with Cordova 4.0_files/conversion_async.js.download"></script><script type="text/javascript" async="" src="./Crosswalk - Crosswalk with Cordova 4.0_files/analytics.js.download"></script><script async="" src="./Crosswalk - Crosswalk with Cordova 4.0_files/gtm.js.download"></script><script>
+      WebFontConfig = {
+        custom: {
+          families: ['Clear Sans'],
+          urls: ['/css/fonts.css']
+        },
+        google: {
+          families: ['Source Code Pro:n4,n6']
+        },
+        timeout: 2000
+      };
+    </script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/jquery.min.js.download"></script>
+    <script async="" defer="" src="./Crosswalk - Crosswalk with Cordova 4.0_files/webfont.js.download"></script>
+    <link rel="stylesheet" href="./Crosswalk - Crosswalk with Cordova 4.0_files/main.css">
+
+    <meta name="description" content="Enable the most advanced web innovations with the Crosswalk Project web runtime to develop powerful Android and Cordova apps.">
+    <meta name="author" content="Crosswalk">
+    <meta name="handheldfriendly" content="true">
+    <meta name="mobileoptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Facebook -->
+    <meta property="og:side_name" content="Crosswalk">
+    <meta property="og:title" content="Cordova">
+    <meta property="og:url" content="http://crosswalk-project.org/documentation/cordova">
+    <meta property="og:description" content="Enable the most advanced web innovations with the Crosswalk Project web runtime to develop powerful Android and Cordova apps.">
+    <meta property="og:image" content="/assets/crosswalk-og-banner.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://crosswalk-project.org/documentation/cordova">
+    <meta name="twitter:title" content="Cordova">
+    <meta name="twitter:description" content="Enable the most advanced web innovations with the Crosswalk Project web runtime to develop powerful Android and Cordova apps.">
+    <meta name="twitter:site" content="@xwalk_project">
+
+    <!-- Relevant original Crosswalk Project JS -->
+    <link rel="stylesheet" href="./Crosswalk - Crosswalk with Cordova 4.0_files/fonts.css"><link rel="stylesheet" href="./Crosswalk - Crosswalk with Cordova 4.0_files/css"><script src="./Crosswalk - Crosswalk with Cordova 4.0_files/utils.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/xwalk.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/versions.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/demos.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/testimonials.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/tools.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/qualityindicators.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/i18n.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/highlight.pack.js.download"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script language="javascript" type="text/javascript">
+      var style = document.createElement('style');
+      style.type = "text/css";
+      style.id = "antiClickjack";
+      style.innerHTML = "body{display:none !important;}";
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+
+  <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/saved_resource"></script></head>
+  <body>
+    <!-- If curr page named 'index' and less than 2 dirs deep,
+         do custom layouts. (home screen, blog, app-mgmt page)
+         Else, provide doc header and nav. -->
+    
+    <div class="container">
+      <div class="doc-header">
+        
+
+
+  <div class="doc-logo-div">
+     <a href="https://crosswalk-project.org/" class="doc-logo-link">
+       <img src="./Crosswalk - Crosswalk with Cordova 4.0_files/crosswalkproject-logo-horizontal-dark.png" class="doc-logo-img">
+     </a>
+  </div>
+  <div class="doc-nav-div">
+    <ul class="doc-nav-list">
+      <li class="doc-nav-item">
+        <a href="https://crosswalk-project.org/documentation/getting_started.html" class="doc-nav-link">Documentation</a>
+      </li>
+      <li class="doc-nav-item">
+        <a href="https://crosswalk-project.org/blog" class="doc-nav-link">Blog</a>
+      </li>
+      <li class="doc-nav-item hide-on-small">
+        <a href="https://crosswalk-project.org/contribute" class="doc-nav-link">Contribute</a>
+      </li>
+      <li class="doc-nav-item hide-on-small">
+        <a href="https://github.com/crosswalk-project/crosswalk-website/wiki" class="doc-nav-link">Wiki</a>
+      </li>
+      <li class="doc-nav-item hide-on-small">
+        <a href="https://crosswalk-project.org/documentation/about/faq.html" class="doc-nav-link">FAQ</a>
+      </li>
+      <li class="doc-nav-item">
+	<span class="i18n-label" id="i18n-label">
+	  <span id="i18n-inner">
+	    <img src="./Crosswalk - Crosswalk with Cordova 4.0_files/i18n-globe.png" class="i18n-globe">
+	    English
+	    <img src="./Crosswalk - Crosswalk with Cordova 4.0_files/i18n-arrow.png" class="i18n-arrow">
+	  </span>
+	  
+	</span>
+      </li>
+    </ul>
+  </div>
+  
+
+      </div>
+      <br>
+      <div class="doc-main">
+        <div class="row">
+          
+          <div id="translation-missing-toaster">
+  <p style="padding:10px"> 抱歉，该网页目前还不存在中文版本，请继续浏览其他网页！ </p>
+</div>
+
+          
+
+
+
+<nav id="contents" class="article-toc nav-toggleContainer">
+  <a href="https://crosswalk-project.org/documentation/cordova.html#contents" id="contents-toggle" class="button button--small button--tertiary nav-toggle">Table of Contents</a>
+  <a href="https://crosswalk-project.org/documentation/#contents-toggle" class="button button--small button--tertiary nav-toggle--dummy">Table of Contents</a>
+  <ul class="article-list nav-toggleHide">
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/about.html">About</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/getting_started.html">Getting Started</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/crosswalk-app-tools.html">Crosswalk App Tools</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/android.html">Android</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/ios.html">iOS</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/windows.html">Windows</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/linux.html">Linux</a>
+        
+        </li>
+    
+        <li class="article-item  nav-item--active">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/cordova.html">Cordova</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/tizen.html">Tizen</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/manifest.html">Manifest</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/apis.html">APIs</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/downloads.html">Downloads</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/shared_mode.html">Shared Mode</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/download_mode.html">Download Mode</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/crosswalk_lite.html">Crosswalk Lite</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/tutorials.html">Tutorials</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/samples.html">Samples</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/community.html">Community</a>
+        
+        </li>
+    
+        <li class="article-item ">
+        <a class="article-link" href="https://crosswalk-project.org/documentation/qa.html">Quality Assurance</a>
+        
+        </li>
+    
+  </ul>
+
+</nav>
+
+<article class="article article--hasToC">
+  <h1>Crosswalk with Cordova 4.0</h1>
+<h2>Overview</h2>
+<p>With the introduction in <a href="http://cordova.apache.org/announcements/2015/04/15/cordova-android-4.0.0.html">Cordova Android 4.0.0</a> of pluggable WebView support, it is now easy to use the Crosswalk WebView with your Cordova app. By using the Crosswalk WebView plugin, developers can enjoy remote debugging capabilities, cutting edge HTML5 features such as WebGL, WebAudio and WebRTC, and significant performance enhancements on Android devices all the way down to Android 4.0 Ice Cream Sandwich (ICS).</p>
+<h2>Prerequisites</h2>
+<p>Please refer to the <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_android_index.md.html#Android%20Platform%20Guide">Android Platform Guide</a> to setup the Android SDK environment for Cordova application development.</p>
+<p>Make sure you have an up-to-date version of <a href="https://nodejs.org/">node.js</a> installed on your system.</p>
+<h2>Workflow</h2>
+<ol>
+<li><p>Install the Cordova Command Line Interface (CLI)</p>
+<pre><code class="language-cmdline">&gt; npm install -g cordova</code></pre>
+<p>Check that the version of Cordova CLI is &gt;= 5.0.0:</p>
+<pre><code class="language-cmdline">&gt; cordova -v
+5.0.0</code></pre>
+</li>
+<li><p>Create a Cordova example app, which can be used as a stub for creating new projects</p>
+<pre><code class="language-cmdline">&gt; cordova create hello com.example.hello HelloWorld</code></pre>
+</li>
+<li><p>Navigate to the newly created project directory</p>
+<pre><code class="language-cmdline">&gt; cd hello</code></pre>
+<p>All subsequent commands must be run within the project's directory (e.g. <code>hello</code>)</p>
+</li>
+<li><p>Add Android as the target platform</p>
+<pre><code class="language-cmdline">&gt; cordova platform add android</code></pre>
+<p>This adds the Cordova Android platform (version &gt;= 4.0.0) into the app.</p>
+</li>
+<li><p>Install the Crosswalk WebView plugin</p>
+<pre><code class="language-cmdline">&gt; cordova plugin add cordova-plugin-crosswalk-webview</code></pre>
+<p>This adds the <a href="https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/">Crosswalk WebView cordova plugin</a> into the app.</p>
+</li>
+<li><p>Build with Crosswalk WebView engine for Android</p>
+<pre><code class="language-cmdline">&gt; cordova build android</code></pre>
+<p>This automatically fetches the stable Crosswalk WebView libraries from the Crosswalk Project download site (<a href="https://download.01.org/crosswalk/releases/crosswalk/android/">https://download.01.org/crosswalk/releases/crosswalk/android/</a>) and build for both X86 and ARM architectures. For example, building a <code>HelloWorld</code> project generates:</p>
+<pre><code class="language-cmdline">/path/to/hello/platforms/android/build/outputs/apk/android-x86-debug.apk
+/path/to/hello/platforms/android/build/outputs/apk/android-armv7-debug.apk</code></pre>
+<p>The Crosswalk WebView library will be embedded in your app. This adds about 18MB to the APK size.</p>
+</li>
+<li><p>Launch it in the emulator</p>
+<pre><code class="language-cmdline">&gt; cordova emulate android</code></pre>
+<p>Launching a Cordova app using the Crosswalk WebView is done the same way as Cordova app. The command will launch the emulator, install the application APK, and then launch your app. As an example, after launching the above Cordova example, you will see the following result on your screen:</p>
+<p><img src="./Crosswalk - Crosswalk with Cordova 4.0_files/cordova-in-emulator.jpg"></p>
+<p>Please refer to The <a href="https://cordova.apache.org/docs/en/4.0.0/guide_cli_index.md.html#The%20Command-Line%20Interface">Command-Line Interface</a> for a full listing of commands and options.</p>
+</li>
+</ol>
+<h2>Remote debugging with Crosswalk</h2>
+<p>The Crosswalk WebView allows remote debugging the Cordova app, even on old Android devices (4.0+).</p>
+<p>You can use desktop Google Chrome to debug any apps running on Crosswalk remotely. After the app launches, navigate to “chrome://inspect” to list the debuggable app on the device. For example, when inspecting the <code>HelloWorld</code> app running in the emulator with Crosswalk:</p>
+<p><img src="./Crosswalk - Crosswalk with Cordova 4.0_files/cordova-devtools-inspect.jpg"></p>
+<p>By clicking the “inspect” link under <code>Hello World</code>, a Chrome DevTools window will be opened. In the JavaScript console tab, you can make sure the app is running on Crosswalk by inspecting <code>navigator.userAgent</code>. For example, the app is running on Crosswalk 13 (Chromium M42):</p>
+<p><img src="./Crosswalk - Crosswalk with Cordova 4.0_files/cordova-with-devtools.jpg"></p>
+<p>Please refer to <a href="https://developer.chrome.com/devtools/docs/remote-debugging">Remote Debugging on Android with Chrome</a> for the user manual.</p>
+<h2>(Optional) Android Platform Only Workflow</h2>
+<p>This workflow is for developers who want to stay on the bleeding edge of development. Go to Cordova CLI workflow if you want a stable release.</p>
+<p><a href="http://www.google.com/url?q=http%3A%2F%2Fgit-scm.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFOqwvh2KbuCJQUVsR5fW38FrTRTw">git</a> is required.</p>
+<ol>
+<li><p>Pull the cordova-android repo</p>
+<pre><code class="language-cmdline">&gt; git clone https://github.com/apache/cordova-android.git</code></pre>
+</li>
+<li><p>Install plugman</p>
+<pre><code class="language-cmdline">&gt; npm install -g plugman</code></pre>
+<p>Check that the version of plugman is &gt;= 0.22.17</p>
+<pre><code class="language-cmdline">&gt; plugman -v
+0.23.1</code></pre>
+<p>For more information about plugman, please refer to <a href="https://cordova.apache.org/docs/en/4.0.0/plugin_ref_plugman.md.html#Using%20Plugman%20to%20Manage%20Plugins">Using Plugman to Manage Plugins</a>.</p>
+</li>
+<li><p>Create a Cordova example app</p>
+<pre><code class="language-cmdline">&gt; /path/to/cordova-android/bin/create hello com.example.hello HelloWorld</code></pre>
+</li>
+<li><p>Navigate to the project directory</p>
+<pre><code class="language-cmdline">&gt; cd hello</code></pre>
+<p>All subsequent commands need to be run within the project's directory.</p>
+</li>
+<li><p>Install Crosswalk WebView engine plugin</p>
+<pre><code class="language-cmdline">&gt; plugman install --platform android \
+  --plugin https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git \
+  --project .</code></pre>
+<p>Note: as there are binary files in the git history, the first git cloning downloads about 100MB. This  might be slow across a low bandwidth connection.</p>
+</li>
+<li><p>Build with the Crosswalk WebView engine</p>
+<pre><code class="language-cmdline">&gt; ./cordova/build</code></pre>
+<p>This automatically fetches the Crosswalk WebView libraries from the Crosswalk Project release site (<a href="https://download.01.org/crosswalk/releases/crosswalk/android/">https://download.01.org/crosswalk/releases/crosswalk/android/</a>) and builds for both X86 and ARM architectures. For example, it generates:</p>
+<pre><code class="language-cmdline">/path/to/hello/build/outputs/apk/hello-x86-debug.apk
+/path/to/hello/build/outputs/apk/hello-armv7-debug.apk</code></pre>
+</li>
+<li><p>Launch in emulator</p>
+<pre><code class="language-cmdline">&gt; ./cordova/run --emulator --nobuild</code></pre>
+<p>This launches the emulator, installs the application APK, and launches your app. </p>
+</li>
+</ol>
+<p>For more commands of cordova-android, please refer to <a href="https://github.com/apache/cordova-android">cordova-android README.md</a>.</p>
+
+  <footer class="article-next">
+    
+
+
+
+
+  </footer>
+</article>
+
+          
+        </div>
+      </div>
+    </div>
+    
+
+    
+ 
+  <hr class="footer-divider" style="margin-top:125px; margin-bottom:0px">
+    <div style="position:relative; top:-30px;">
+       <a href="https://crosswalk-project.org/"><img src="./Crosswalk - Crosswalk with Cordova 4.0_files/cw-logo-circle.png" width="60px" style="display:block; margin: 0 auto;"></a>
+    </div>
+    <footer class="footer footer--documentation">
+      <div class="container">
+        <div class="row">
+          <div class="footer-div" language="en" style="display: block;">
+          <img src="./Crosswalk - Crosswalk with Cordova 4.0_files/Twitter_logo_blue.png" width="20px"> Follow  <a href="http://twitter.com/xwalk_project">@xwalk_project on Twitter</a> for the latest developer activities and project updates.
+          </div>
+           <div class="footer-div" language="zh" style="display:none">
+           <img src="./Crosswalk - Crosswalk with Cordova 4.0_files/Sina_Weibo_Blue.png" width="60px"> 参考<a href="http://weibo.com/crosswalk">微博</a> 最新的开发者活动或者更新。
+          </div>
+          <div class="footer-div">
+             Latest blog post:<br>
+              
+              
+                <b><a href="https://crosswalk-project.org/blog">Crosswalk 23 to be the last Crosswalk release</a></b><br>
+                &nbsp;(<span><time class="js-vagueTime" datetime="Fri, 10 Feb 2017 09:30:00 GMT">9 months ago</time></span>)
+              
+              <br>
+           </div>
+          <div class="footer-div">
+              <strong><a href="https://crosswalk-project.org/feed.xml"><img src="./Crosswalk - Crosswalk with Cordova 4.0_files/rss-icon-16.gif" style="vertical-align:middle"> RSS Feed</a></strong>
+          </div>
+          <div class="footer-div">
+             <a href="https://crosswalk-project.org/documentation/getting_started.html"> Documentation</a> &nbsp;
+             <a href="https://crosswalk-project.org/blog"> Blog</a> &nbsp;
+             <a href="https://crosswalk-project.org/documentation/downloads.html"> Downloads</a> <br>
+             <a href="https://crosswalk-project.org/jira/secure/Dashboard.jspa"> Issues</a> &nbsp;
+             <a href="https://github.com/crosswalk-project"> GitHub Source</a> &nbsp;
+             <a href="https://crosswalk-project.org/sitemap.html">Sitemap</a> <br>
+          </div>
+        </div>
+        <div class="row">
+            <small>
+              The Crosswalk Project was created by the Intel Open Source Technology Center. Copyright © 2013–2016 Intel Corporation. All right reserved. <a href="https://github.com/crosswalk-project/crosswalk-website/wiki/Privacy-Policy">  Privacy policy </a>  *Other names and brands may be claimed as the property of others.
+            </small>
+        </div>
+      </div>
+    </footer>
+<script>
+    $("[language=en]").css("display","none");
+    $("[language=en]").css("display","block");
+</script>
+
+    
+    
+      <!-- Google Tag Manager -->
+      <noscript>&amp;lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-WC843Q"
+      height="0" width="0" style="display:none;visibility:hidden"&amp;gt;&amp;lt;/iframe&amp;gt;</noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WC843Q');</script>
+      <!-- End Google Tag Manager -->
+    
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/smoothScroll.js.download"></script>
+    <script src="./Crosswalk - Crosswalk with Cordova 4.0_files/vagueTime.js.download"></script>
+    <!-- <script async defer src="/js/trmix.js"></script> -->
+  
+
+<div id="i18n-menu" class="i18n-menu i18n-menu-light">
+            <a onclick="switchLanguage(&#39;English&#39;)">English</a>
+            <a onclick="switchLanguage(&#39;Chinese&#39;)">中文版</a>
+	  </div>
+<script type="text/javascript" id="inspectletjs">window.__insp=window.__insp||[];__insp.push(["wid",1434355060]);(function(){function a(){var b=document.createElement("script");b.type="text/javascript";b.async=!0;b.id="inspsync";b.src=("https:"==document.location.protocol?"https":"http")+"://cdn.inspectlet.com/inspectlet.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)}window.attachEvent?window.attachEvent("onload",a):window.addEventListener("load",a,!1)})();</script>
+<script type="text/javascript" id="">setTimeout(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0028/0724.js?"+Math.floor((new Date).getTime()/36E5);a.async=!0;a.type="text/javascript";b.parentNode.insertBefore(a,b)},1);</script></body></html>
