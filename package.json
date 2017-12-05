@@ -1,8 +1,8 @@
 {
   "name": "AnonimosJa",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Luciano Lima",
+  "homepage": "http://comdomino.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
