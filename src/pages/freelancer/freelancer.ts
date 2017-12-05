@@ -17,7 +17,7 @@ import { Area } from '../area/area';
 export class FreelancerPage {
   portifolioPage = PortifolioPage;  
   public pessoas: Array<Freela> = [];
-  public pessoasOrigin: Array<Freela> = [];
+  public pessoasOrigin: Array<FreelancerArea> = [];
   public areaFreelancers: Array<FreelancerArea> = [];
 
   constructor(public navCtrl: NavController, public http: Http) {
@@ -36,7 +36,7 @@ export class FreelancerPage {
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.pessoas = data;
-      this.pessoasOrigin = data;
+      //this.pessoasOrigin = data;
       //alert(this.pessoas);
     }); 
   }
@@ -46,11 +46,12 @@ export class FreelancerPage {
     this.http.get(url).map(res => res.json())
     .subscribe(data => {
       this.areaFreelancers = data;
+      this.pessoasOrigin = data;
     }); 
   }
 
   initializeItems() {
-    this.pessoas = this.pessoasOrigin;
+    this.areaFreelancers = this.pessoasOrigin;
   }
 
   public getItems(ev: any) {
@@ -62,9 +63,10 @@ export class FreelancerPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.pessoas = this.pessoas.filter((pessoa) => {
-        if(pessoa.nome != null){
-          return (pessoa.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.areaFreelancers = this.areaFreelancers.filter((af) => {
+        if(af.freelancer != null){
+          return (af.freelancer.nome.toLowerCase().indexOf(val.toLowerCase()) > -1 ||
+                  af.area.descricao.toLowerCase().indexOf(val.toLowerCase()) > -1);
         }
       })
     }
